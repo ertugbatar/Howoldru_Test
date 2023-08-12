@@ -45,18 +45,21 @@ public class HowoldruStepDefs {
 
 
     @Then("I should see an estimated age of {string} displayed on the screen")
-    public void i_should_see_an_estimated_age_of_displayed_on_the_screen(String string) {
+    public void i_should_see_an_estimated_age_of_displayed_on_the_screen(String string) throws InterruptedException {
 
-        WebElement headerText = getDriver().findElement(By.xpath("/html/body/div[1]/div/div/div/div/h1[2]/span"));
-        String expectedHeaderText = "34";
-        String actualHeaderText = headerText.getText(); // will return "Registration form" as String
+        WebElement TextMessage = getDriver().findElement(By.id("resultAge"));
+        Thread.sleep(3000);
+        String actualTextMessage = TextMessage.getText();
+        String ExpectedAge = "34";
 
-        if (actualHeaderText.equals(expectedHeaderText)){
-            System.out.println("Test passed! Estimated age is 34");
+        if (actualTextMessage.equals(ExpectedAge)){
+            System.out.println("Test passed! Your age is 34");
         }else{
-            System.out.println("Test failed! Estimated age is not 34");
+            System.out.println("Test failed!");
         }
     }
+
+
 
     @Then("I should see an error message indicating the correct date format")
     public void iShouldSeeAnErrorMessageIndicatingTheCorrectDateFormat() {
@@ -88,13 +91,6 @@ public class HowoldruStepDefs {
 
 
 }
-
-
-
-
-
-
-
 
 
 

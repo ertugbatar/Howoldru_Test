@@ -12,9 +12,10 @@ Scenario Outline: Estimate Age from Name and Birthday
     Then I should see an estimated age of "<ExpectedAge>" displayed on the screen
     Examples:
 
-      | Name             | Birthday   | ExpectedAge |
-      | Ertug Batar      | 21.11.1988 | 34          |
-      | John Doe         | 15.05.1990 | 33          |
+      | Name             | Birthday    | ExpectedAge |
+      | Ertug Batar      | 21.11.1988  | 34          |
+      | John Doe         | 15.05.1990  | 33          |
+
 
   Scenario Outline: Invalid Date Format
 
